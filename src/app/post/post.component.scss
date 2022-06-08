@@ -1,0 +1,9 @@
+.post {
+    width: 450px;
+    border: 1px dashed darkblue;
+    padding: 1rem;
+    display: flex;
+    margin: 30px; //gap между компонентами не работает
+    list-style-type: none;
+    background: linear-gradient(45deg, blue, red);
+}

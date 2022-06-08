@@ -1,0 +1,20 @@
+<h1>3. Event binding</h1>
+
+<button (click)= "onClick()">Click me!</button>                   <!-- теперб событие click будет вызывать из ts метод onClick-->
+
+<input type="text" (input) = "onInput($event)">         <!-- теперб событие input будет передавать строку в ts метод onInput, в качестве её параметра event-->
+<p><strong>{{inputValue}}</strong></p>
+
+<input type="text" (keyup) = "onInputKeyboard($event)">         <!-- тут в ts нужно уточнить тип атрибутов, чтобы не выдавало ошибку -->
+<p><strong>{{inputValue2}}</strong></p>
+
+<input 
+    type="text"
+    (keyup.enter) = "onInputEnter($event)"
+    (blur)="onBlur(myInput.value)"         
+    #myInput
+    >                                                           <!-- по нажатию enter input отправится в ts функцию -->
+                                                                <!-- blur - действие после убирания объекта из фокуса -->
+                                                                <!-- #myInput создает специальное название (локальную ссылку) на <input>, которая передает в onBlur атрибут value input'a-->
+<p><strong>{{inputValue3}}</strong></p>
+<p><strong>{{inputValue4}}</strong></p>
