@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-post2',
-  templateUrl: './post2.component.html',
-  styleUrls: ['./post2.component.scss']
+  selector: 'app-a2-dynamic-inserts',
+  templateUrl: './a2-dynamic-inserts.component.html',
+  styleUrls: ['./a2-dynamic-inserts.component.scss']
 })
-export class Post2Component {
+export class A2DynamicInsertsComponent {
 
   title = 'Dynamic title'         //свойства класса для экспорта в template (интерполяция)
   number = 42

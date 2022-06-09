@@ -1,0 +1,15 @@
+<h1>6A. Style manipulate</h1>
+<!-- ngStyle дает возможность байндить стили -->
+<!-- Когда оборачиваем атрибут в [] появляется возможность писать в него js -->
+
+<button (click)="backgroundToggle = !backgroundToggle">Toggle</button> <!-- Если нужно поменять одну строку, можно прямо в "" -->
+
+<div [ngStyle]="{                                       
+    width: '200px',
+    height: '200px',
+    borderRadius: '5px',
+    border: '1px solid #ccc', 
+    background: backgroundToggle ? 'red' : 'blue'
+}">
+                                                                        <!-- Кнопка меняет параметр в ts, а ngStyle отслеживает параметр background -->
+</div>

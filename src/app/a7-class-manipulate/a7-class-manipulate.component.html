@@ -1,0 +1,14 @@
+<h1>7A. Class manipulate</h1>
+<button (click)="redParToggle = !redParToggle">Toggle</button>
+
+<!-- 1 способ если много классов -->
+<p [ngClass]="{
+    red: redParToggle,
+    blue: !redParToggle
+}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, voluptate!</p>
+
+<!-- 2 способ если мало классов-->
+<p 
+  [class.blue]="!redParToggle"
+  [class.red]="redParToggle"
+  >Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, voluptate!</p>

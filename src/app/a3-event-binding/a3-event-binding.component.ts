@@ -1,11 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-post3',
-  templateUrl: './post3.component.html',
-  styleUrls: ['./post3.component.scss'],
+  selector: 'app-a3-event-binding',
+  templateUrl: './a3-event-binding.component.html',
+  styleUrls: ['./a3-event-binding.component.scss']
 })
-export class Post3Component {
+export class A3EventBindingComponent {
+
   inputValue = '';
   inputValue2 = '';
   inputValue3 = '';
@@ -32,3 +33,6 @@ export class Post3Component {
     this.inputValue4 = str
   }
 }
+
+
+

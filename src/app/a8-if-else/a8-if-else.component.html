@@ -1,0 +1,12 @@
+<h1>8A. ngIf ngElse</h1>
+<!-- перед директивами, которые позволяют изменять структуру html css называются структурными (ngElse, ngFor и тд) нужно ставить "*" -->
+
+<button (click)="toggle = !toggle">Toggle</button>
+
+<p *ngIf="toggle; else blueP" class="red">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, dicta!</p>
+
+<ng-template #blueP>                                                <!-- Создаем контейнер с названием blueP, else ссылается на него -->
+    <p class="blue">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto, dicta!</p>
+</ng-template>
+
+

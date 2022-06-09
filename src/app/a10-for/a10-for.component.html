@@ -1,0 +1,29 @@
+<h1>10A. For циклы</h1>
+
+<ul>
+    <li *ngFor="let i of arr">              <!-- Итерируем строки li -->
+        {{i}}                               <!-- Вызываем элемент по индексу i массива -->
+    </li>   
+</ul>
+
+<ul>
+    <li *ngFor="let i of arr; let idx = index">              <!-- Включаем в итерацию несколько переменных и одну ссылаем на index -->
+      index {{idx + 1 + ' = '}} <strong>{{i}}</strong>             <!-- Вызываем индекс массива idx и элемент по индексу i массива -->
+    </li>   
+</ul>
+<br>
+<ul style="list-style: none">                                <!-- Создаем список с итерациями и динамическими ссылками -->
+    <li *ngFor="let post of objs">
+        <p>{{post.title}} <b>{{post.author}}</b></p>
+        <p>{{post.contains}}</p>
+        <ul style="list-style: none">
+            <li *ngFor="let comment of post.comments">
+                <div>
+                    <small><strong>{{comment.name}}</strong></small>
+                    <p> <small>{{comment.text}}</small></p>
+                </div>
+            </li>
+            <br>
+        </ul>
+    </li>
+</ul>

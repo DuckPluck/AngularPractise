@@ -1,0 +1,6 @@
+<h1>5A. 2 way binding</h1>
+
+<!-- <input type="text" [ngModel]="title" (input)="onInput($event)">            скобочки нужны для обратного байндинга (но мы упростим эту строку ниже) -->
+<input type="text" [(ngModel)]="title">    <!-- похоже на обычный байндинг, но для крутых. Для работы необходимо в app.module.ts подключить FormsModule -->
+<p>{{title}}</p>
+
