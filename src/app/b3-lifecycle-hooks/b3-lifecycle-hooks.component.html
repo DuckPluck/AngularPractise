@@ -1,0 +1,23 @@
+<h1>3B. lifecycle-hooks</h1>
+<hr>
+
+<!-- lifecycle-hooks это список методов, позволяющие обращаться к компонентам на разных стадиях (при создании, при завершении, при изменении и тд) -->
+<!-- список хуков https://angular.io/guide/lifecycle-hooks -->
+
+<app-b3-post-form
+    (onAdd)="updatePosts($event)"    
+></app-b3-post-form>                
+<hr>                                                               
+<app-b3-post
+    *ngFor="let p of posts"
+    [post]="p"
+    (onRemove)="removePost($event)"                                   
+>
+    <div #info>
+        <small *ngIf="p.text.length > 10; else short">Пост длинный</small>     
+        <ng-template #short>                                                   
+            <small>Пост короткий</small>                             
+        </ng-template>
+    </div>                                   
+</app-b3-post>             
+

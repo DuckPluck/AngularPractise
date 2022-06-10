@@ -11,15 +11,15 @@ export class A10ForComponent {
   objs = [
     {title: 'Post 1', author: 'Daniil', contains: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis unde enim ducimus facilis magni perferendis aliquam necessitatibus illo nemo, numquam iure laborum quis porro explicabo fuga adipisci quo deserunt beatae.',
     comments: [
-      {name: 'Max', text: 'Lorem 1'},
-      {name: 'Max', text: 'Lorem 2'},
-      {name: 'Max', text: 'Lorem 3'},
+      {name: 'Max', text: 'Comment 1'},
+      {name: 'Max', text: 'Comment 2'},
+      {name: 'Max', text: 'Comment 3'},
     ]},
     {title: 'Post 2', author: 'Alexandr', contains: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis unde enim ducimus facilis magni perferendis aliquam necessitatibus illo nemo, numquam iure laborum quis porro explicabo fuga adipisci quo deserunt beatae.',
     comments: [
-      {name: 'Max', text: 'Lorem 1'},
-      {name: 'Max', text: 'Lorem 2'},
-      {name: 'Max', text: 'Lorem 3'},
+      {name: 'Max', text: 'Comment 1'},
+      {name: 'Max', text: 'Comment 2'},
+      {name: 'Max', text: 'Comment 3'},
     ]}
   ]
 }

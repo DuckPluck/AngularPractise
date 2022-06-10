@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 export interface Post {           /* Для начала создаем шаблон интерфейса (это хорошая практика ts) */
   title: string
@@ -7,14 +7,14 @@ export interface Post {           /* Для начала создаем шабл
 }
 
 @Component({
-  selector: 'app-b1',
-  templateUrl: './b1.component.html',
-  styleUrls: ['./b1.component.scss']
+  selector: 'app-b1-elements-transfer',
+  templateUrl: './b1-elements-transfer.component.html',
+  styleUrls: ['./b1-elements-transfer.component.scss']
 })
-export class B1Component {
+export class B1ElementsTransferComponent {
   posts: Post[] = [               /* Теперь удобно создаем объект с автозаполнением */
-    {title: 'Хочу выучить Angular компоненты', text: 'Я все еще учу компоненты', id: 1},
-    {title: 'Следующий блок', text: 'Будет про директивы и про пайпы', id: 2}
+    {title: 'Хочу выучить Angular компоненты', text: 'Я все еще учу компоненты', id: 2},
+    {title: 'Следующий блок', text: 'Будет про директивы и про пайпы', id: 1}
   ]
 
   updatePosts(post: Post) {

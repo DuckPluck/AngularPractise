@@ -16,7 +16,15 @@ import { A10ForComponent } from './a10-for/a10-for.component';
 import { A11PipesBasicsComponent } from './a11-pipes-basics/a11-pipes-basics.component';
 import { B1PostFormComponent } from './b1-post-form/b1-post-form.component';
 import { B1PostComponent } from './b1-post/b1-post.component';
-import { B1Component } from './b1/b1.component';
+import { B2FocusControlComponent } from './b2-focus-control/b2-focus-control.component';
+import { B3LifecycleHooksComponent } from './b3-lifecycle-hooks/b3-lifecycle-hooks.component';
+import { B1ElementsTransferComponent } from './b1-elements-transfer/b1-elements-transfer.component';
+import { B3PostComponent } from './b3-post/b3-post.component';
+import { B3PostFormComponent } from './b3-post-form/b3-post-form.component';
+import { B4ChangeDetectionStrategyComponent } from './b4-change-detection-strategy/b4-change-detection-strategy.component';
+import { B4PostComponent } from './b4-post/b4-post.component';
+import { B5ViewEncapsulationStyleComponent } from './b5-view-encapsulation-style/b5-view-encapsulation-style.component';
+import { B5PostComponent } from './b5-post/b5-post.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +42,15 @@ import { B1Component } from './b1/b1.component';
     A11PipesBasicsComponent,
     B1PostFormComponent,
     B1PostComponent,
-    B1Component,
+    B2FocusControlComponent,
+    B3LifecycleHooksComponent,
+    B1ElementsTransferComponent,
+    B3PostComponent,
+    B3PostFormComponent,
+    B4ChangeDetectionStrategyComponent,
+    B4PostComponent,
+    B5ViewEncapsulationStyleComponent,
+    B5PostComponent,
   ],
   imports: [
     BrowserModule,                                  //стандартный модуль

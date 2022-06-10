@@ -1,5 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-import { Post } from '../b1/b1.component';
+import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';
 
 @Component({
   selector: 'app-b1-post-form',
@@ -31,9 +31,9 @@ export class B1PostFormComponent implements OnInit {
       
       console.log('New Post: ', post)
 
-      this.title = this.text = ''                         /* Изначально значения равны пустой строчке */
+      this.title = this.text = ''                         /* Удаляем значения в конце */
     }
   }
 
 }
-/* Далее необходимо передать переменную post в основной компонент (b1 component) и добавить там в массив */
+/* Далее необходимо передать переменную post в основной компонент (b1 elements transfer) и добавить там в массив */
