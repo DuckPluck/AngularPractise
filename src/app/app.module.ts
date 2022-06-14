@@ -27,6 +27,11 @@ import { B5ViewEncapsulationStyleComponent } from './b5-view-encapsulation-style
 import { B5PostComponent } from './b5-post/b5-post.component';
 import { StyleDirective } from './c1-directives/style.directive';
 import { C1MainComponent } from './c1-main/c1-main.component';
+import { C2MainComponent } from './c2-main/c2-main.component';
+import { C2EventDirectivesDirective } from './c2-event-directives/c2-event-directives.directive';
+import { C3TransferParameterIntoDirectiveDirective } from './c3-transfer-parameter-into-directive/c3-transfer-parameter-into-directive.directive';
+import { C3MainComponent } from './c3-main/c3-main.component';
+
 
 @NgModule({
   declarations: [
@@ -54,7 +59,11 @@ import { C1MainComponent } from './c1-main/c1-main.component';
     B5ViewEncapsulationStyleComponent,
     B5PostComponent,
     StyleDirective,
-    C1MainComponent
+    C1MainComponent,
+    C2MainComponent,
+    C2EventDirectivesDirective,
+    C3TransferParameterIntoDirectiveDirective,
+    C3MainComponent,
   ],
   imports: [
     BrowserModule,                                  //стандартный модуль

@@ -19,8 +19,6 @@ import { Directive, ElementRef, Renderer2 } from "@angular/core";
 
 export class StyleDirective {           
     constructor(private elRef: ElementRef, private r: Renderer2) {                     /* Дополнительно инжектируем в директиву еще один объект типа Renderer2*/
-        this.r.setStyle(this.elRef.nativeElement, 'color', 'blue')                     /* Далее обращаемся к этому объекту и применяем методы, чтобы добавить класс, стили и тд */
-        console.log(elRef)                                       
-        elRef.nativeElement.style.color = 'red'
+        this.r.setStyle(this.elRef.nativeElement, 'color', 'blue')                     /* Далее обращаемся к этому объекту и применяем методы, чтобы добавить класс, стили и тд главному  объекту */
     }                    
 }
