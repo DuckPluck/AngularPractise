@@ -8,8 +8,7 @@ export interface Post {           /* Для начала создаем шабл
 
 @Component({
   selector: 'app-b1-elements-transfer',
-  templateUrl: './b1-elements-transfer.component.html',
-  styleUrls: ['./b1-elements-transfer.component.scss']
+  templateUrl: './b1-elements-transfer.component.html'
 })
 export class B1ElementsTransferComponent {
   posts: Post[] = [               /* Теперь удобно создаем объект с автозаполнением */

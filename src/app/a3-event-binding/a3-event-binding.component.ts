@@ -2,8 +2,7 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-a3-event-binding',
-  templateUrl: './a3-event-binding.component.html',
-  styleUrls: ['./a3-event-binding.component.scss']
+  templateUrl: './a3-event-binding.component.html'
 })
 export class A3EventBindingComponent {
 

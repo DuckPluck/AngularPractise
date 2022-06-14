@@ -3,8 +3,7 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';  
 
 @Component({
   selector: 'app-b1-post',
-  templateUrl: './b1-post.component.html',
-  styleUrls: ['./b1-post.component.scss']
+  templateUrl: './b1-post.component.html'
 })
 export class B1PostComponent implements OnInit {
                                                  /* *** 1 способ передачи параметров внутрь компонента (из html в ts) *** */

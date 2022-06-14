@@ -4,7 +4,6 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';  
 @Component({
   selector: 'app-b4-post',
   templateUrl: './b4-post.component.html',
-  styleUrls: ['./b4-post.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush     /* теперь angular в этом компоненте будет реагировать только изменения input'ов () */
 })
 

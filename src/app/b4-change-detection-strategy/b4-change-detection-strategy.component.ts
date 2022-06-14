@@ -3,8 +3,7 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';
 
 @Component({
   selector: 'app-b4-change-detection-strategy',
-  templateUrl: './b4-change-detection-strategy.component.html',
-  styleUrls: ['./b4-change-detection-strategy.component.scss']
+  templateUrl: './b4-change-detection-strategy.component.html'
 })
 export class B4ChangeDetectionStrategyComponent implements OnInit {
   posts: Post[] = [               

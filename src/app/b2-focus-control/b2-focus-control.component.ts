@@ -4,8 +4,7 @@ import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-b2-focus-control',
-  templateUrl: './b2-focus-control.component.html',
-  styleUrls: ['./b2-focus-control.component.scss']
+  templateUrl: './b2-focus-control.component.html'
 })
 export class B2FocusControlComponent implements OnInit {
 

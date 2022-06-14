@@ -3,8 +3,7 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';  
 
 @Component({
   selector: 'app-b3-post',
-  templateUrl: './b3-post.component.html',
-  styleUrls: ['./b3-post.component.scss']
+  templateUrl: './b3-post.component.html'
 })
 
 export class B3PostComponent implements 

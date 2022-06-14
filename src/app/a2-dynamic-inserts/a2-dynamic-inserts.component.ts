@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-a2-dynamic-inserts',
-  templateUrl: './a2-dynamic-inserts.component.html',
-  styleUrls: ['./a2-dynamic-inserts.component.scss']
+  templateUrl: './a2-dynamic-inserts.component.html'
 })
 export class A2DynamicInsertsComponent {
 

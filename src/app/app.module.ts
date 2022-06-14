@@ -25,6 +25,8 @@ import { B4ChangeDetectionStrategyComponent } from './b4-change-detection-strate
 import { B4PostComponent } from './b4-post/b4-post.component';
 import { B5ViewEncapsulationStyleComponent } from './b5-view-encapsulation-style/b5-view-encapsulation-style.component';
 import { B5PostComponent } from './b5-post/b5-post.component';
+import { StyleDirective } from './c1-directives/style.directive';
+import { C1MainComponent } from './c1-main/c1-main.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import { B5PostComponent } from './b5-post/b5-post.component';
     B4PostComponent,
     B5ViewEncapsulationStyleComponent,
     B5PostComponent,
+    StyleDirective,
+    C1MainComponent
   ],
   imports: [
     BrowserModule,                                  //стандартный модуль

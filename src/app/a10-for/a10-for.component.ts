@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-a10-for',
-  templateUrl: './a10-for.component.html',
-  styleUrls: ['./a10-for.component.scss']
+  templateUrl: './a10-for.component.html'
 })
 export class A10ForComponent {
   arr = [1, 1, 2, 3, 5, 8, 13]

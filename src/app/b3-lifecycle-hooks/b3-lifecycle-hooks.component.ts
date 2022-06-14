@@ -3,8 +3,7 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';
 
 @Component({
   selector: 'app-b3-lifecycle-hooks',
-  templateUrl: './b3-lifecycle-hooks.component.html',
-  styleUrls: ['./b3-lifecycle-hooks.component.scss']
+  templateUrl: './b3-lifecycle-hooks.component.html'
 })
 export class B3LifecycleHooksComponent implements OnInit {
   posts: Post[] = [               

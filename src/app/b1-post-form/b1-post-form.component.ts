@@ -3,8 +3,7 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';
 
 @Component({
   selector: 'app-b1-post-form',
-  templateUrl: './b1-post-form.component.html',
-  styleUrls: ['./b1-post-form.component.scss']
+  templateUrl: './b1-post-form.component.html'
 })
 export class B1PostFormComponent implements OnInit {
 

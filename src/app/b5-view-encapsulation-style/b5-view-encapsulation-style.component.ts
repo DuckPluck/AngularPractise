@@ -3,13 +3,12 @@ import { Post } from '../b1-elements-transfer/b1-elements-transfer.component';
 
 @Component({
   selector: 'app-b5-view-encapsulation-style',
-  templateUrl: './b5-view-encapsulation-style.component.html',
-  styleUrls: ['./b5-view-encapsulation-style.component.scss']
+  templateUrl: './b5-view-encapsulation-style.component.html'
 })
 export class B5ViewEncapsulationStyleComponent implements OnInit {
   posts: Post[] = [               
-    {title: 'Хочу выучить лайфцикл хуки', text: 'Я все еще учу компоненты', id: 2},
-    {title: 'Добавить пост и удалить', text: 'для демонстрации хуков', id: 1}
+    {title: 'Хочу выучить инкапсуляцию', text: 'и понять почему стили', id: 2},
+    {title: 'по умолчанию', text: 'не применяются глобально', id: 1}
   ]
 
   updatePosts(post: Post) {

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-a5-two-way-binding',
-  templateUrl: './a5-two-way-binding.component.html',
-  styleUrls: ['./a5-two-way-binding.component.scss']
+  templateUrl: './a5-two-way-binding.component.html'
 })
 export class A5TwoWayBindingComponent {
 
