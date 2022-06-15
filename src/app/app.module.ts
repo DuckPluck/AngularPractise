@@ -31,6 +31,10 @@ import { C2MainComponent } from './c2-main/c2-main.component';
 import { C2EventDirectivesDirective } from './c2-event-directives/c2-event-directives.directive';
 import { C3TransferParameterIntoDirectiveDirective } from './c3-transfer-parameter-into-directive/c3-transfer-parameter-into-directive.directive';
 import { C3MainComponent } from './c3-main/c3-main.component';
+import { C4MainComponent } from './c4-main/c4-main.component';
+import { C4HostBindingInDirectiveDirective } from './c4-host-binding-in-directive/c4-host-binding-in-directive.directive';
+import { C5MainComponent } from './c5-main/c5-main.component';
+import { C5StructureDirectiveDirective } from './c5-structure-directive/c5-structure-directive.directive';
 
 
 @NgModule({
@@ -64,6 +68,10 @@ import { C3MainComponent } from './c3-main/c3-main.component';
     C2EventDirectivesDirective,
     C3TransferParameterIntoDirectiveDirective,
     C3MainComponent,
+    C4MainComponent,
+    C4HostBindingInDirectiveDirective,
+    C5MainComponent,
+    C5StructureDirectiveDirective,
   ],
   imports: [
     BrowserModule,                                  //стандартный модуль

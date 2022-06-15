@@ -1,4 +1,12 @@
 <h1>3C. Передача параметра(аргумента) внутрь директивы</h1>
 <br>
-<p appEventWithParam="green">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab.</p>
+                                             <!-- Если передаем в параметр строку, байндить не обязательно (appEventWithParam="green" = [appEventWithParam]="'green'") -->
+
+<p [appEventWithParam]="'green'" [newFontWeight]="'bold'">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab.</p>
+<!-- сначала вызываем директиву с параметром appEventWithParam, потом передаем значение в переменную newFontWeight -->
+<br>
+<hr>
+
+<p [appEventWithParam] [newStyles]="{newBorder: '1px solid blue', newBorderRadius: '5px'}">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, ab.</p>
+<!-- сначала вызываем директиву appEventWithParam, потом передаем значения в объект newStyles -->
 <br>

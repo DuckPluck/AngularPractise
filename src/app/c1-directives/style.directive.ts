@@ -15,10 +15,10 @@ import { Directive, ElementRef, Renderer2 } from "@angular/core";
 //         elRef.nativeElement.style.color = 'red'
 //     }                    
 // }
-                                        /* но это не очень защищенная модель, подойдет для web, но более универсальный код пишем ниже */
+                                        /* но это не очень защищенная модель, подойдет для web, но более универсальный код через Renderer пишем ниже */
 
 export class StyleDirective {           
-    constructor(private elRef: ElementRef, private r: Renderer2) {                     /* Дополнительно инжектируем в директиву еще один объект типа Renderer2*/
-        this.r.setStyle(this.elRef.nativeElement, 'color', 'blue')                     /* Далее обращаемся к этому объекту и применяем методы, чтобы добавить класс, стили и тд главному  объекту */
+    constructor(private elRef: ElementRef, private r: Renderer2) {           /* Дополнительно инжектируем в директиву еще один объект типа Renderer2*/
+        this.r.setStyle(this.elRef.nativeElement, 'color', 'blue')           /* Далее обращаемся к объекту Renderer и применяем его методы, чтобы добавить класс, стили и тд главному эл-ту */
     }                    
 }

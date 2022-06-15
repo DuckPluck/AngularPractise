@@ -1,0 +1,21 @@
+<h1>5C. Создание структурной директивы</h1>
+
+<button class="btn" (click)="isVisible = !isVisible">isVisible</button>
+
+<div *ngIf="isVisible" class="wrap">
+    <p>*ngIf</p>
+</div>
+
+<!-- структурные директивы пишутся с звездочкой для упрощения, на самом деле эта запись эквивалент следующей: -->
+
+<ng-template [ngIf]="isVisible">
+    <div class="wrap">
+        <p>ng-template [ngIf]</p>
+    </div>
+</ng-template>
+
+<!-- Протестируем созданную структурную директиву (c5-structure-directive.directive.ts): -->
+
+<div *appIfnot="isVisible" class="wrap">
+    <p>*appIfnot</p>
+</div>
