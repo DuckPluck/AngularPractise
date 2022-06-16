@@ -35,6 +35,13 @@ import { C4MainComponent } from './c4-main/c4-main.component';
 import { C4HostBindingInDirectiveDirective } from './c4-host-binding-in-directive/c4-host-binding-in-directive.directive';
 import { C5MainComponent } from './c5-main/c5-main.component';
 import { C5StructureDirectiveDirective } from './c5-structure-directive/c5-structure-directive.directive';
+import { D1PipeNumberComponent } from './d1-pipe-number/d1-pipe-number.component';
+import { D2PipeStringComponent } from './d2-pipe-string/d2-pipe-string.component';
+import { D3PipeDateComponent } from './d3-pipe-date/d3-pipe-date.component';
+import { D4PipeObjComponent } from './d4-pipe-obj/d4-pipe-obj.component';
+import { MultByPipe } from './d5-pipe-creation/d5-pipe-creation.component';
+import { D5MainComponent } from './d5-main/d5-main.component';
+import { ExMarksPipe } from './d5-pipe-creation/ex-marks.pipe';
 
 
 @NgModule({
@@ -72,6 +79,13 @@ import { C5StructureDirectiveDirective } from './c5-structure-directive/c5-struc
     C4HostBindingInDirectiveDirective,
     C5MainComponent,
     C5StructureDirectiveDirective,
+    D1PipeNumberComponent,
+    D2PipeStringComponent,
+    D3PipeDateComponent,
+    D4PipeObjComponent,
+    MultByPipe,
+    D5MainComponent,
+    ExMarksPipe
   ],
   imports: [
     BrowserModule,                                  //стандартный модуль

@@ -1,0 +1,16 @@
+<h1>3D. Pipe date</h1>
+<!-- По сути это маленькие трансформеры внутри шаблона. Служат для трансформации отображения каких либо динамических данных -->
+<!-- Пайпы всегда доступны, тк лежат в модуле browserModule -->
+
+<br><p>Cтрока, как есть ---- {{date}}</p>
+<br><p>Применяем пайп <b>date</b> ---- {{date | date}}</p>
+<br><p>Применяем пайп <b>date:'fullDate'</b> ---- {{date | date:'fullDate'}}</p>
+<br><p>Применяем пайп <b>date:'long'</b> ---- {{date | date:'long'}}</p>
+<br><p>Применяем пайп <b>date:'yyyy'</b> ---- {{date | date:'yyyy'}}</p>
+<br><p>Применяем пайп <b>date:'GGGG'</b> (Эра) ---- {{date | date:'GGGG'}}</p>
+<br><p>Применяем пайп <b>date:'MMMM'</b> ---- {{date | date:'MMMM'}}</p>
+<br><p>Применяем пайп <b>date:'MM: dd, yyyy'</b> ---- {{date | date:'MM: dd, yyyy'}}</p>
+<br><p>Применяем пайп <b>date:'MM dd yyyy, HH:mm:ss'</b> ---- {{date | date:'MM dd yyyy, HH:mm:ss'}}</p>
+<br>
+<!-- Все форматы перечислены в документации https://angular.io/api -->
+
