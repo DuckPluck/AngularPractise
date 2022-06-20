@@ -1,0 +1,9 @@
+<h1>2E. Инжектирование сервиса внутрь сервиса</h1>
+<p>Внутри этого сервиса инжектирован еще один сервис - который добавляет пометки о действиях в консоль</p>
+
+<div class="card">
+    <h2>Counter: {{counterService.counter}}</h2>
+
+    <button class="btn" (click)="counterService.increase()">+</button>
+    <button class="btn" (click)="counterService.decrease()">-</button>
+</div>

@@ -42,6 +42,14 @@ import { D4PipeObjComponent } from './d4-pipe-obj/d4-pipe-obj.component';
 import { MultByPipe } from './d5-pipe-creation/d5-pipe-creation.component';
 import { D5MainComponent } from './d5-main/d5-main.component';
 import { ExMarksPipe } from './d5-pipe-creation/ex-marks.pipe';
+import { D6MainComponent } from './d6-main/d6-main.component';
+import { D6PipeListsFilterPipe } from './d6-pipe-lists-filter/d6-pipe-lists-filter.pipe';
+import { D7PipeAsyncPipe } from './d7-pipe-async/d7-pipe-async.pipe';
+import { D7MainComponent } from './d7-main/d7-main.component';
+import { E1MainComponent } from './e1-main/e1-main.component';
+import { AppCounterService } from './e1-services/e1-service.service';
+import { E1SubComponent } from './e1-sub/e1-sub.component';
+import { E2MainComponent } from './e2-main/e2-main.component';
 
 
 @NgModule({
@@ -85,13 +93,22 @@ import { ExMarksPipe } from './d5-pipe-creation/ex-marks.pipe';
     D4PipeObjComponent,
     MultByPipe,
     D5MainComponent,
-    ExMarksPipe
+    ExMarksPipe,
+    D6MainComponent,
+    D6PipeListsFilterPipe,
+    D7PipeAsyncPipe,
+    D7MainComponent,
+    E1MainComponent,
+    E1SubComponent,
+    E2MainComponent,
   ],
   imports: [
     BrowserModule,                                  //стандартный модуль
     FormsModule                                     //реализовываем для way binding
   ],
-  providers: [],
+  providers: [
+    
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

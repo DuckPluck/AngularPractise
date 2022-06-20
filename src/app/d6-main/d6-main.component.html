@@ -1,0 +1,17 @@
+<h1>D6. Пайп с фильтрацией списков</h1>
+<br>
+<!-- Создадим кнопки для выбора где искать - в заголовке или тексте -->
+
+<button class="btn" (click)="searchArea = 'title'">Title</button>
+<button class="btn" (click)="searchArea = 'text'">Text</button>
+
+<!-- Создадим список постов и поле ввода, чтобы набирать в ввод фильтр и фильтровать список, с помощью фильтров -->
+
+<input type="text" [(ngModel)]="search"> 
+                                        <!-- Применяем пайп ко всем постам в итерации с аргументом нашего ввода. Также передаем внутрь аргумент зоны поиска -->
+<div
+    *ngFor="let post of posts | filter:search:searchArea"     
+    class="card">
+     <h2>{{post.title}}</h2>
+     <p>{{post.text}}</p>
+</div>

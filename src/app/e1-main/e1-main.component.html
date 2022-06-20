@@ -1,0 +1,18 @@
+<h1>1E. Создание глобального и локального сервиса</h1>
+<p>Демонстрация разницы между <b>глобальным</b> и <b>локальным</b> сервисом: </p>
+<div class="card">
+    <h2>App counter: {{appCounterService.counter}}</h2>
+
+    <button class="btn" (click)="appCounterService.increase()">+</button>
+    <button class="btn" (click)="appCounterService.decrease()">-</button>
+</div>
+
+<div class="card">
+    <h2>Local counter: {{localCounterService.counter}}</h2>
+
+    <button class="btn" (click)="localCounterService.increase()">+</button>
+    <button class="btn" (click)="localCounterService.decrease()">-</button>
+</div>
+<hr>
+<app-e1-sub></app-e1-sub>
+<p>Таким образом, зависимости от <b>регистрации сервиса</b> получаем разные режимы его работы</p>
