@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { A2DynamicInsertsComponent } from './a2-dynamic-inserts/a2-dynamic-inserts.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { A6StyleManipulateComponent } from './a6-style-manipulate/a6-style-manipulate.component';
 import { A1PostComponent } from './a1-post/a1-post.component';
 import { A3EventBindingComponent } from './a3-event-binding/a3-event-binding.component';
@@ -44,12 +44,13 @@ import { D5MainComponent } from './d5-main/d5-main.component';
 import { ExMarksPipe } from './d5-pipe-creation/ex-marks.pipe';
 import { D6MainComponent } from './d6-main/d6-main.component';
 import { D6PipeListsFilterPipe } from './d6-pipe-lists-filter/d6-pipe-lists-filter.pipe';
-import { D7PipeAsyncPipe } from './d7-pipe-async/d7-pipe-async.pipe';
-import { D7MainComponent } from './d7-main/d7-main.component';
+import { D7MainComponent } from './d7-pipe-async/d7-pipe-async.component';
 import { E1MainComponent } from './e1-main/e1-main.component';
-import { AppCounterService } from './e1-services/e1-service.service';
 import { E1SubComponent } from './e1-sub/e1-sub.component';
 import { E2MainComponent } from './e2-main/e2-main.component';
+import { F1FormsComponent } from './f1-forms/f1-forms.component';
+import { F3NgModelsComponent } from './f3-ng-models/f3-ng-models.component';
+import { F3MainComponent } from './f3-main/f3-main.component';
 
 
 @NgModule({
@@ -96,15 +97,18 @@ import { E2MainComponent } from './e2-main/e2-main.component';
     ExMarksPipe,
     D6MainComponent,
     D6PipeListsFilterPipe,
-    D7PipeAsyncPipe,
     D7MainComponent,
     E1MainComponent,
     E1SubComponent,
     E2MainComponent,
+    F1FormsComponent,
+    F3NgModelsComponent,
+    F3MainComponent,
   ],
   imports: [
-    BrowserModule,                                  //стандартный модуль
-    FormsModule                                     //реализовываем для way binding
+    BrowserModule,                                  // стандартный модуль
+    FormsModule,                                    // реализовываем для way binding
+    ReactiveFormsModule                             // добавляем для работы с формами
   ],
   providers: [
     

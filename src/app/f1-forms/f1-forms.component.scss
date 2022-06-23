@@ -1,0 +1,17 @@
+/* Angular автоматически присваивает всем формам классы для управления - ng-pristine/dirty, ng-untouched/touched, ng-invalid/valid */
+
+/* ng-pristine/dirty - отвечает за девственность формы (текст) */
+/* ng-untouched/touched - отвечает за девственность фокуса */
+/* ng-invalid/valid - отвечает за прохождение валидаторов */
+
+/* По этим классам можно визуализировать состояния форм: */
+
+input {
+    &.ng-invalid.ng-touched {                           /* & - тоже самое что this. в js */
+        border: 1px solid red;
+    }
+
+    &.ng-valid.ng-touched {
+        border: 1px solid green;
+    }
+}

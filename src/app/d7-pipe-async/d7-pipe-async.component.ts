@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-d7-main',
-  templateUrl: './d7-main.component.html'
+  selector: 'app-d7-pipe-async',
+  templateUrl: './d7-pipe-async.component.html'
 })
 export class D7MainComponent {
                                                         /* Нам нужна переменная, которая со временем принимает значение 'Promise Resolved': */

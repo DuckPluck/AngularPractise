@@ -1,0 +1,16 @@
+div {
+    display: inline-block;
+
+    button {
+        padding: .5rem 1rem;
+        font-size: 1rem;
+        color: #fff;
+        background: #ddd;
+        border: none;
+        outline: none;
+
+        &.active {
+            background: green;           // scss позволяет вкладывать стили в блоки; &(амперсант) тоже самое что this. - относительная ссылка на родитель
+        }
+    }
+}

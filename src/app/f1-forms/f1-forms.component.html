@@ -1,0 +1,109 @@
+<h1>1F. Формы и 2F. Валидация</h1>
+<p>На этом шаблоне различных форм построим <b>обработку форм с помощью angular</b></p>
+<p>- Валидаторы - визуализация ошибок - сообщения ошибок - </p>
+
+<div class="container">
+                                                      <!-- байндим форму на переменную form в ts компонент; Добавляем из ts метод submit() по нажатию кнопки отправить -->
+    <form class="card" [formGroup]="form" (ngSubmit)="submit()">
+      <h1>Angular Forms</h1>
+
+<!-- ----------------------------------------------------------------------------  E-mail  --------------------------------------------------------------------------- -->
+<!-- Работа с валидаторами -->
+
+      <div class="card">
+        <div class="form-control">
+          <label>Email</label>
+          <input type="text" placeholder="Email" formControlName="email">                    <!-- Связываем контрол инпут с переменной email в компоненте для контроля -->
+
+                                       <!-- В этот <div> установим фидбек ошибок от валидатора - если форма не совпадает с валидацией mail и тронута, то показываем их -->
+          <div *ngIf="form.get('email')?.invalid && form.get('email')?.touched"                                                                              
+            class="validation"
+          >
+            <small *ngIf="form.get('email')?.errors?.['required']">      <!-- Используем для вывода нужной ошибки логику через ключи errors[...keys] -->
+              Поле Email не может быть пустым                                                
+            </small>
+            <small *ngIf="form.get('email')?.errors?.['email']">
+              Введите корректный email
+            </small>
+            <small *ngIf="form.get('email')?.errors?.['restrictedEmail']">    <!-- Добавляем кастомные валидаторы из f2 -->
+              email '{{form.get('email')?.value}}' запрещен
+            </small>
+            <small *ngIf="form.get('email')?.errors?.['uniqEmail']">
+              email '{{form.get('email')?.value}}' уже зарегистрирован
+            </small>
+          </div>
+        </div>
+
+<!-- ---------------------------------------------------------------------------  Password  -------------------------------------------------------------------------- -->
+<!-- Работа с валидаторами -->
+
+        <div class="form-control">
+          <label>Пароль</label>                                                                             
+          <input type="password" placeholder="Пароль" formControlName="password">            <!-- Связываем контрол инпут с переменной password в компоненте   -->
+                                                                                             <!-- Используем ту же логику, что и в Email: -->
+          <div *ngIf="form.get('password')?.invalid && form.get('password')?.touched"        
+            class="validation"
+          >
+            <small *ngIf="form.get('password')?.errors?.['required']">
+              Пароль не может быть пустым
+            </small>
+                      <!-- Для обработки ошибки длины удобно использовать обращение к массиву erors (внимание на регистры) (используй <pre> чтобы узнать что за массив) -->
+            <small *ngIf="form.get('password')?.errors?.['minlength']?.['requiredLength']">
+              Длинна должна быть не менее {{form.get('password')?.errors?.['minlength']?.['requiredLength']}} символов.    <!-- обращаемся к макс длине в массиве erors -->
+              Сейчас длинна {{form.get('password')?.errors?.['minlength']?.['actualLength']}}                           <!-- обращаемся к текущей длине в массиве erors -->
+            </small>
+          </div>                                                                    
+        </div>
+      </div>                                                                                              
+
+<!-- ----------------------------------------------------------------------------  Address  ------------------------------------------------------------------------ --> 
+<!-- Работа с группами контролов и динамическая перезапись (обновление) полей -->
+
+      <div class="card" formGroupName="address"> <!-- Для связывания блока с логикой группы используем formGroupName с названием группы -->
+        <h2>Адрес</h2>
+  
+        <div class="form-control">
+          <label>Страна</label>
+  
+          <select formControlName="country">      <!-- Для связывания контролов с логикой контролов - formControlName -->
+            <option value="ru">Россия</option>
+            <option value="ua">Украина</option>
+            <option value="by">Беларусь</option>
+          </select>
+        </div>
+  
+        <div class="form-control">
+          <input type="text" placeholder="Город" formControlName="city">
+        </div>
+                                                             <!-- Если есть кнопки, нужно указать их тип. Эта кнопка в зависимости от страны автозаполняет столицу -->
+        <button class="btn" type="button" (click)="setCapital()">Выбрать столицу</button> <!-- Для создания динамического обновления (перезаписей) событий используем (click)="" -->
+      </div>
+
+<!-- ---------------------------------------------------------------------------  Skillbox  ---------------------------------------------------------------------- -->  
+<!-- Динамическое добавление элементов внутри формы -->    
+
+      <div class="card" formGroupName="skills">                                             <!-- Указываем имя для блока группы форм -->
+        <h2>Ваши навыки</h2>
+        <button class="btn" type="button" (click)="addSkill()">Добавить умение</button>
+                                                                                            <!-- Создаем итерацию для отображения по контролам массива skills -->
+                                                                                       <!-- Для обращения к инпутам скилов пришлось создать метод getSkillControls() -->
+        <div
+          class="form-control"
+          *ngFor="let control of getSkillControls(); let i = index"                         
+        >
+
+          <label>Умение {{i + 1}}</label>                                                   <!-- Тело скилла -->
+          <input type="text" [formControlName]="i">          <!-- Тк мы работаем с группой, для formControlName мы указываем индекс и тк это не строка, обличаем в [] -->
+        </div>
+      </div>
+
+<!-- ----------------------------------------------------------------------------  Submit  ------------------------------------------------------------------------ -->
+
+      <button class="btn" type="submit" [disabled]="form.invalid || form.pending">Отправить</button>  <!-- Важно. Для кнопки "отправить" нужен особенный тип - submit -->
+                                                            <!-- Для блокировки кнопки байндим [disabled] с значением form.invalid (на всякий случай для безопасности блокируем во время обработки запроса form.pending) -->
+    </form>
+  </div>
+  
+  
+  
+  
