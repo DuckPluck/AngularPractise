@@ -1,0 +1,46 @@
+<h1>1G. Работа с сервером (HttpClient)<br> 2G. Работа с interceptor'ом</h1><br>
+
+<div class="container">
+    <h1>Angular HttpClient</h1>
+  
+    <div class="card">
+      <div class="form-control">
+        <input type="text" placeholder="Название" [(ngModel)]="todoTitle">  <!-- Отправляем инпут в компонент с помощью [(ngModel)] -->
+      </div>
+      <button class="btn" (click)="addTodo()">Добавить</button>
+      <button class="btn" (click)="fetchTodos()">Загрузить</button>
+    </div>
+  
+    <hr>
+
+    <p *ngIf="error; else todosBlock" class="error">{{error}}</p> <!-- Если есть ошибка, показываем ее вместо блока карточек -->
+    <ng-template #todosBlock>
+
+      <div *ngIf="!loading; else loadingBlock">           <!-- Создаем условия скрытия блока для индикации загрузки -->
+          <div *ngIf="todos.length; else noTodos">            <!-- Создаем условие - если карточек - 0, скрываем блок и показываем "Нет элементов" -->
+              <div class="card" *ngFor="let todo of todos">        <!-- Итерируем карточку под все получаемые в ответе api эл-ты todos -->
+                <p>
+                  <span [class.completed]="todo.completed === true">{{todo.title | titlecase}}</span>     <!-- Проверка и вывод класса completed и Вывод названия с пайпом -->
+                  <span>
+                    <button class="btn btn-danger"(click)="removeTodo(todo.id)">Удалить</button>          <!-- Событие по клику - вызов метода removeTodo() с аргументом id эл-та -->
+                    <button class="btn" [disabled]="todo.completed" (click)="completeTodo(todo.id)">Завершить</button>   <!-- Если todo завершен, то блокируем кнопку "завершить", событие по клику вызывает метод завершения -->
+                  </span>
+                </p>
+              </div>
+          </div>
+          <ng-template #noTodos>
+              <p>Нет элементов</p>
+          </ng-template>
+      </div>
+
+      <ng-template #loadingBlock>
+          <p>Loading...</p>
+      </ng-template>
+
+    </ng-template>
+
+  </div>
+  
+  
+  
+  

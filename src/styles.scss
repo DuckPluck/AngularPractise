@@ -37,7 +37,7 @@ img {
 }
 
 .btn {
-  display: inline-block;                      // scss позволяет вкладывать стили в блоки; &(амперсант) тоже самое что this. - относительная ссылка на родитель
+  display: inline-block;
   background: #333333;
   color: #fff;
   padding: 0.4rem 1.3rem;
@@ -47,16 +47,21 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
-  
+
   &:disabled {
     background: #ccc;
     color: #000;
     cursor: not-allowed;
   }
+
+  &:hover {
+    opacity: 0.8;
+  }
 }
 
-.btn:hover {
-  opacity: 0.8;
+.btn.btn-danger {
+  background: #dc3545;
+  color: #fff;
 }
 
 .form-control {
@@ -84,6 +89,15 @@ img {
   padding: 1rem;
   border: #ccc 1px dotted;
   margin: 0.7rem 0;
+
+  p {
+    display: flex;
+    justify-content: space-between;
+
+    span.completed {
+      text-decoration: line-through;
+    }
+  }
 }
 
 input,
@@ -99,4 +113,10 @@ textarea {
 
 hr {
   margin: .5rem 0;
+}
+
+p {
+  &.error {
+    color: red;
+  }
 }

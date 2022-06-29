@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';                       //импорт компонентов
+import { NgModule, Provider } from '@angular/core';                       //импорт компонентов
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
@@ -51,7 +51,15 @@ import { E2MainComponent } from './e2-main/e2-main.component';
 import { F1FormsComponent } from './f1-forms/f1-forms.component';
 import { F3NgModelsComponent } from './f3-ng-models/f3-ng-models.component';
 import { F3MainComponent } from './f3-main/f3-main.component';
+import { G1ServerHttpclientComponent } from './g1-server-httpclient/g1-server-httpclient.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './g2-interceptor/auth.interceptor';
 
+const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменную с параметрами для регистрации в providers
+  provide: HTTP_INTERCEPTORS,
+  useClass: AuthInterceptor,
+  multi: true                                 // multi: true - чтобы несколько интерсепторов не перезаписывались, а выполнялись поочередно
+}
 
 @NgModule({
   declarations: [
@@ -104,14 +112,16 @@ import { F3MainComponent } from './f3-main/f3-main.component';
     F1FormsComponent,
     F3NgModelsComponent,
     F3MainComponent,
+    G1ServerHttpclientComponent,
   ],
   imports: [
     BrowserModule,                                  // стандартный модуль
     FormsModule,                                    // реализовываем для way binding
-    ReactiveFormsModule                             // добавляем для работы с формами
+    ReactiveFormsModule,                            // добавляем для работы с формами
+    HttpClientModule                                // для работы с http клиентом
   ],
   providers: [
-    
+    INTERCEPTOR_PROVIDER                            // регистрируем переменную INTERCEPTOR_PROVIDER, созданную выше с настройками для работы с интерсептором
   ],
   bootstrap: [AppComponent]
 })

@@ -8,7 +8,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 const VALUE_ACESSOR: Provider = {                         // Этот тип служит для проведения сервисов или других сущностей
   provide: NG_VALUE_ACCESSOR,
   useExisting: forwardRef(() => F3NgModelsComponent),     // Тут мы регистрируем название компонента
-  multi: true
+  multi: true                                             // multi: true - чтобы несколько ngModels не перезаписывались, а выполнялись поочередно
 }
 
 // Далее нужно занести массив VALUE_ACESSOR в @Component({providers: []}), добавить методы модели и компонент станет моделью
