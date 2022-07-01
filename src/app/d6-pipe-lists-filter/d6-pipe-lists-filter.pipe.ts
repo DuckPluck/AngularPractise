@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Post } from '../d6-main/d6-main.component'
+import { Post } from './d6-main/d6-main.component'
 
 @Pipe({
   name: 'filter',
