@@ -3,23 +3,27 @@
 
 <nav class="navbar">
     <h1>
-      <a href="#">Angular Routing</a>
+      <a [routerLink]="['/']">Angular Routing</a>
     </h1>
-    <ul>
-      <li class="active">
-        <a href="#">Home</a>
+
+    <ul>  <!-- class="active" отвечает за "нажатое" состояние кнопки, чтобы angular автоматизировал переключение этого состояния, используем routerLinkActive="className"-->
+          <!-- Тк название других страниц содержит в себе '/', angular постоянно держит ссылку Home активной, решается с помощью [routerLinkActiveOptions]="{exact: true}" (настройка точности совпадения) -->
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">    
+        <a [routerLink]="['/']">Home</a>
       </li>
-      <li><a href="#">Posts</a></li>
-      <li><a href="#">About</a></li>
-      <li><button class="btn">Login</button></li>
-      <li><button class="btn">Logout</button></li>
+
+      <li routerLinkActive="active"><a routerLink="/posts">Posts</a></li>   <!-- Чтобы страница не перезагружалась, необходимо пользоваться routerLink="", а не href="" -->
+      <li routerLinkActive="active"><a [routerLink]="['/about']">About</a></li>   <!-- Если нужна динамическая ссылка, можно байндить routerLink и прописывать в нее js. Обязательно скобки [''] -->
+      
+      <li><button class="btn" (click)="auth.login()">Login</button></li>    <!-- Кнопки-свитчеры обращаются в сервис, который эмулирует аутентификацию -->
+      <li><button class="btn" (click)="auth.logout()">Logout</button></li>
     </ul>
   </nav>
   
   <div class="container">
     <div class="card">
       
-      <!-- Теперь мы рендерим сюда не компонент, а страницу(в зависимсоти от адресной строки), чтобы указать куда именно рендерить страницу в шаблоне используем <router-outlet> -->
+      <!-- c помощью <router-outlet> мы рендерим сюда страницу в зависимсоти от адресной строки   -->
       <router-outlet></router-outlet>  
   </div>
 

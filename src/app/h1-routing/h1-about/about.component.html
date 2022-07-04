@@ -1,5 +1,12 @@
+
+<!-- Этот компонент необходим для создания вложенной страницы внутри этой страницы (по нажатию Show Extra) -->
+
+
+
 <h1>About component </h1>
 
 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet, magnam!</p>
 
-<p><a href="#">Show Extra</a></p>
+<p><a [routerLink]="['/about', 'extra']">Show Extra</a></p> <!-- Оживляем ссылку для добавления вложенной страницы с помощью [routerLink] (1. Арг - ссылка, 2. что подгрузить) -->
+
+<router-outlet></router-outlet>     <!-- Используется для указания в каком месте открывать вызванную ссылку -->

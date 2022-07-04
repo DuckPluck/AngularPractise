@@ -61,6 +61,9 @@ import { H1PostComponent } from './h1-routing/h1-post/post.component';
 import { H1PostsComponent } from './h1-routing/h1-posts/posts.component';
 import { H1MainComponent } from './h1-routing/h1-main/main.component';
 import { AppRoutingModule } from './h1-routing/app-routing.module';
+import { H1ErrorPageComponent } from './h1-routing/h1-error-page/h1-error-page.component';
+import { H1ResolvedPostComponent } from './h1-routing/h1-resolved-post/resolved-post.component';
+
 
 const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменную с параметрами интерсептора для регистрации в providers (g2)
   provide: HTTP_INTERCEPTORS,
@@ -126,6 +129,9 @@ const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменн
     H1PostComponent,
     H1PostsComponent,
     H1MainComponent,
+    H1ErrorPageComponent,
+    H1ResolvedPostComponent
+
   ],
   imports: [
     BrowserModule,                                  // стандартный модуль

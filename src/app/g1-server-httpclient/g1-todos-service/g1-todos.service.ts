@@ -18,7 +18,7 @@ export class TodosService {
     // Далее в середине каждого метода ---отдельно--- будут подробно рассмотрены опции типа возврата стрима
 
 
-    addTodo(todo: Todo): Observable<Todo> {                                                          // Принимаем переменную todo из компонента
+    addTodo(todo: Todo): Observable<Todo> {                                                // Принимаем переменную todo из компонента
         return this.http.post<Todo>('https://jsonplaceholder.typicode.com/todos', todo,    // Используем метод http post() и создаем на сервере новый объект, указываем post() тип данных <Todo>
 
         {headers: new HttpHeaders({'MyCustomHeader': Math.random().toString()})})          // Добавляем свой хедер (подробнее на 5 строк ниже)
