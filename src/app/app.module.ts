@@ -63,6 +63,11 @@ import { H1MainComponent } from './h1-routing/h1-main/main.component';
 import { AppRoutingModule } from './h1-routing/app-routing.module';
 import { H1ErrorPageComponent } from './h1-routing/h1-error-page/h1-error-page.component';
 import { H1ResolvedPostComponent } from './h1-routing/h1-resolved-post/resolved-post.component';
+import { AboutExtraPageComponent } from './i1-module/i1-about-page/i1-about-extra-page/i1-about-extra-page.component';
+import { AboutPageComponent } from './i1-module/i1-about-page/i1-about-page.component';
+import { HomePageComponent } from './i1-module/i1-home-page/i1-home-page.component';
+import { I1MainComponent } from './i1-module/i1-main/i1-main.component';
+import { PageNamePipe } from './i1-module/i1-shared/i1-page-name.pipe';
 
 
 const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменную с параметрами интерсептора для регистрации в providers (g2)
@@ -130,7 +135,12 @@ const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменн
     H1PostsComponent,
     H1MainComponent,
     H1ErrorPageComponent,
-    H1ResolvedPostComponent
+    H1ResolvedPostComponent,
+    AboutExtraPageComponent,
+    AboutPageComponent,
+    HomePageComponent,
+    I1MainComponent,
+    PageNamePipe
 
   ],
   imports: [
