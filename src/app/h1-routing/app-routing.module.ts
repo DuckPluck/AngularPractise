@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
+import { I1HomePageComponent } from "../i1-module/i1-home-page/i1-home-page.component";
 import { AuthGuard } from "./auth.guard";
 import { H1AboutExtraComponent } from "./h1-about-extra/about-extra.component";
 import { H1AboutComponent } from "./h1-about/about.component";
@@ -37,8 +38,22 @@ const routes: Routes = [    // Для создания логики роутин
         {path: 'extra', component: H1AboutExtraComponent}    // http://localhost:4200/about/extra -> H1AboutExtraComponent.   Зарегистрировали роут на вложенный эл-т
     ]},                                                      // canActivateChild: [] - для подключения гуардов дочерних эл-тов (применяется на материнский эл-т)
 
+// ------------------------------------------------------------- Отрывок из блока i1-Модули -----------------------------------------------------------------------------------------------------------
+
+            {path: 'i1-home', component: I1HomePageComponent}, // Регистрируем роутинг  основной стр. для блока i1-модули:
+
+           // Для оптимизации можно использовать "Ленивую загрузку" - отложенную загрузку компонента (чтобы не подгружать сразу то, что не используется):
+            {path: 'i1-about', loadChildren: () => import('../i1-module/i1-about-page/i1-about-page.module').then(componentName => componentName.AboutPageModule)},
+           // Тут вызывается callback с путем до модуля и его названием
+
+           // Не забываем удалять этот модуль из главного appModule
+
+           // Также следующей, после роутов настройкой ( [routes], {preLoadingStrategy: PreloadAllModules} ) можно вынудить angular загрузить сразу все необходимое для страницы, а потом в фоновом режиме подгружать модули
+    
+// ------------------------------------------------------------- Отрывок из блока i1-Модули -----------------------------------------------------------------------------------------------------------
+
     {path: 'error', component: H1ErrorPageComponent},        // Это роут для редиректа с всех некорректных адресов
-    {path: '**', redirectTo: '/error'}                       // Этот роут обязательно последним - он создает редирект с всех некорректных адресов
+    {path: '**', redirectTo: '/error'}                       // Этот роут обязательно последним - он создает редирект с всех некорректных адресов (внимание на "/")
 ]  
 
 
@@ -51,6 +66,6 @@ const routes: Routes = [    // Для создания логики роутин
 
 
 
-export class AppRoutingModule {
+export class H1AppRoutingModule {
 
 }

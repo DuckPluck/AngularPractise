@@ -60,14 +60,13 @@ import { H1HomeComponent } from './h1-routing/h1-home/home.component';
 import { H1PostComponent } from './h1-routing/h1-post/post.component';
 import { H1PostsComponent } from './h1-routing/h1-posts/posts.component';
 import { H1MainComponent } from './h1-routing/h1-main/main.component';
-import { AppRoutingModule } from './h1-routing/app-routing.module';
+import { H1AppRoutingModule } from './h1-routing/app-routing.module';
 import { H1ErrorPageComponent } from './h1-routing/h1-error-page/h1-error-page.component';
 import { H1ResolvedPostComponent } from './h1-routing/h1-resolved-post/resolved-post.component';
-import { AboutExtraPageComponent } from './i1-module/i1-about-page/i1-about-extra-page/i1-about-extra-page.component';
-import { AboutPageComponent } from './i1-module/i1-about-page/i1-about-page.component';
-import { HomePageComponent } from './i1-module/i1-home-page/i1-home-page.component';
+import { I1HomePageComponent } from './i1-module/i1-home-page/i1-home-page.component';
 import { I1MainComponent } from './i1-module/i1-main/i1-main.component';
-import { PageNamePipe } from './i1-module/i1-shared/i1-page-name.pipe';
+/* import { AboutPageModule } from './i1-module/i1-about-page/i1-about-page.module'; */ // (Ленивая загрузка (i1 - главный appRoutingModule ) )
+import { SharedModule } from './i1-module/i1-shared/shared.module';
 
 
 const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменную с параметрами интерсептора для регистрации в providers (g2)
@@ -136,11 +135,8 @@ const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменн
     H1MainComponent,
     H1ErrorPageComponent,
     H1ResolvedPostComponent,
-    AboutExtraPageComponent,
-    AboutPageComponent,
-    HomePageComponent,
+    I1HomePageComponent,
     I1MainComponent,
-    PageNamePipe
 
   ],
   imports: [
@@ -148,7 +144,12 @@ const INTERCEPTOR_PROVIDER: Provider = {      // Создаем переменн
     FormsModule,                                    // реализовываем для 2way binding  (a5)
     ReactiveFormsModule,                            // добавляем для работы с формами (f1)
     HttpClientModule,                               // для работы с http клиентом  (g1)
-    AppRoutingModule                                // регистрируем роутинг модуль (h1)
+    SharedModule,                                   // регистрируем модуль с общими компонентами
+    
+    /* AboutPageModule, */                          // регистрируем модули, которые создали (кастомные) (ДЛЯ РАБОТЫ РОУТИНГА, КОТОРЫЙ ВНУТРИ ЭТОГО МОДУЛЯ ГЛАВНЫЙ РОУТИНГ МОДУЛЬ РЕГИСТРИРУЕТСЯ ПОСЛЕ ДОП. РОУТИНГА)
+    // (Если используется ленивая загрузка, импорты остаются только в главном роутинг модуле (путь до модуля и название) )
+
+    H1AppRoutingModule,                             // регистрируем главный роутинг модуль (h1)                              
   ],
   providers: [
     INTERCEPTOR_PROVIDER                            // регистрируем переменную INTERCEPTOR_PROVIDER, созданную выше с настройками для работы с интерсептором (g2)

@@ -1,1 +1,22 @@
-<p>i1-main works!</p>
+
+<!-- Модули это инструмент, позволяющий делать декомпозицию функционала приложения. 
+     Идеальная декомпозиция подразумевает собой обособленно работающие модули - чтобы можно было вынуть модуль из приложения и воткнуть в другое -->
+
+<!-- Задача этого блока - разнести страницы (Home, About) и их функционал в разные модули -->
+
+<nav class="navbar">
+     <h1>Angular Modules</h1>
+   
+     <ul>
+       <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"><a routerLink="/i1-home">Home</a></li>
+       <li routerLinkActive="active" ><a routerLink="/i1-about">About</a></li>
+     </ul>
+   </nav>
+   
+   <div class="container">
+     <div class="card">
+   
+       <router-outlet></router-outlet>
+   
+     </div>
+   </div>

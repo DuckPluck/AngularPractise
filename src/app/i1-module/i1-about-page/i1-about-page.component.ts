@@ -4,8 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-i1-about-page',
   templateUrl: './i1-about-page.component.html',
   styleUrls: ['./i1-about-page.component.scss']
+  
 })
-export class AboutPageComponent  {
+export class I1AboutPageComponent  {
 
   read = false
 

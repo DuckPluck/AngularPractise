@@ -3,7 +3,8 @@
 <button class="btn" (click)="read = true">Mark as read</button>                         <!-- Кнопка красить эл-т в синий цвет и переключает тумблер read -->
 <p [ngStyle]="{color: read ? 'blue' : null}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. In, sit.</p>
 
-<p><a [routerLink]="['/about', 'extra']">Show more...</a></p>
-<p><a [routerLink]="['/about']">Hide more...</a></p>
+<p><a [routerLink]="['i1-extra']">Show more...</a></p>                  <!-- Эти пути относительные, аккуратнее с "/i1-about/i1-about/i1-extra", пользуйтесь "../" -->
+<p><a [routerLink]="['../i1-about']">Hide more...</a></p>
 
 <router-outlet></router-outlet>
+ 
