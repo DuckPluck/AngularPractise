@@ -1,11 +1,12 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { delay } from 'rxjs';
 import { Todo, TodosService } from './g1-todos-service/g1-todos.service';  // Импортируем интерфейс из сервиса g1-todos.service.ts в компонент
 
 // Каждый объект на сервере в HTTP имеет свой уникальный URL-адрес.
 // В REST API есть 4 основных метода HTTP, которые используют для действий с объектами на серверах: 
-// GET (получение информации о данных или списка объектов), DELETE (удаление данных), POST (добавление или замена данных), PUT (регулярное обновление данных)
+// - GET (получение информации о данных или списка объектов),
+// - DELETE (удаление данных), 
+// - POST (добавление или замена данных),
+// - PUT (регулярное обновление данных)
 
 // Тестовые ответы на запросы можно найти на https://jsonplaceholder.typicode.com/
 
